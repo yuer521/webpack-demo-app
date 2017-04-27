@@ -1,11 +1,11 @@
 
 import './css/common.css';
-import layer from './components/layer/layer';
+import Layer from './components/layer/layer';
 
 
 const App=function () {
-    const NUM = 1;
-    alert(NUM);
-    console.log(layer);
+    var dom=document.getElementById('app');
+    var layer = new Layer()
+    dom.innerHTML = layer.tpl;
 }
 new App()

@@ -21,15 +21,24 @@ module.exports={
                 }
             },
             {
+                test:/\.html$/,
+                loader: 'html-loader'
+            },
+            {
                 test:/\.css$/,
-                loader: 'style-loader!css-loader!postcss-loader',
-                options:{
-                    postcss:[
-                        require('autoprefixer')({
-                            broswers:['last 5 versions']
-                        })
-                    ],
-                }
+                loader: 'style-loader!css-loader?importLoader=1!postcss-loader'
+            },
+            {
+                test:/\.less$/,
+                loader: 'style-loader!css-loader!postcss-loader!less-loader'
+            },
+            {
+                test:/\.scss$/,
+                loader: 'style-loader!css-loader!postcss-loader!sass-loader'
+            },
+            {
+                test:/\.(png|jpg|gif|svg)$/,
+                loader: 'url-loader'
             }
         ]
     },
